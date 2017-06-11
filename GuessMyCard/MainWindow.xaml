@@ -1,0 +1,108 @@
+﻿<Window x:Class="GuessMyCard.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GuessMyCard"
+        mc:Ignorable="d"
+        Name="mainWindow"
+        Icon="cardsIcon.ico"
+        Title="Guess My Card" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" WindowState="Maximized">
+
+    <Grid Name="main">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        
+        <!--Menu Definition-->
+        <DockPanel Grid.Row="0">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_File">
+                    <MenuItem Header="_New Game" Click="menuNew_Click"/>
+                    <MenuItem Header="_Save Game" IsEnabled="False" Name="menuSave" Click="menuSave_Click"/>
+                    <MenuItem Header="_Load Game" Click="menuLoad_Click"/>
+                    <MenuItem Header="_Exit" Click="menuExit_Click"/>
+                </MenuItem>
+                <MenuItem Header="_Help">
+                    <MenuItem Header="_View Help" Click="helpView_Click"/>
+                    <MenuItem Header="_About" Click="helpAbout_Click"/>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+
+        <!--Main Page Area-->
+        <Frame Grid.Row="1" x:Name="gameArea" NavigationUIVisibility="Hidden" />
+        
+        <!-- Buttom Buttons -->
+        <Grid Grid.Row="2" Visibility="Collapsed" Name="buttonsStage1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Height="30" Content="Pick Pile 1" Background="Chartreuse" Name="stg1btn1" Click="stage1buttton_Click"/>
+            <Button Grid.Column="1" Height="30" Content="Pick Pile 2" Background="Pink" Name="stg1btn2" Click="stage1buttton_Click"/>
+            <Button Grid.Column="2" Height="30" Content="Pick Pile 3" Background="Aquamarine" Name="stg1btn3" Click="stage1buttton_Click"/>
+            <Button Grid.Column="3" Height="30" Content="Pick Pile 4" Background="WhiteSmoke" Name="stg1btn4" Click="stage1buttton_Click"/>
+        </Grid>
+
+        <Grid Grid.Row="2" Visibility="Collapsed" Name="buttonsStage2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Height="30" Content="Pick Pile 1" Background="Chartreuse" Name="stg2btn1" Click="stage2buttton_Click"/>
+            <Button Grid.Column="1" Height="30" Content="Pick Pile 2" Background="Pink" Name="stg2btn2" Click="stage2buttton_Click"/>
+            <Button Grid.Column="2" Height="30" Content="Pick Pile 3" Background="Aquamarine" Name="stg2btn3" Click="stage2buttton_Click"/>
+        </Grid>
+
+        <Grid Grid.Row="2" Visibility="Collapsed" Name="buttonsStage3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Height="30" Content="Pick Pile 1" Background="Chartreuse" Name="stg3btn1" Click="stage3buttton_Click"/>
+            <Button Grid.Column="1" Height="30" Content="Pick Pile 2" Background="Pink" Name="stg3btn2" Click="stage3buttton_Click"/>
+        </Grid>
+
+        <!--Status Bar-->
+        <DockPanel Grid.Row="3">
+            <StatusBar DockPanel.Dock="Bottom">
+                <StatusBar.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="200" />
+                            </Grid.ColumnDefinitions>
+                        </Grid>
+                    </ItemsPanelTemplate>
+                </StatusBar.ItemsPanel>
+                <!--Bar Items-->
+                <StatusBarItem HorizontalAlignment="Center">
+                    <TextBlock Text="Start playing!" FontSize="14" Name="stageBar"/>
+                </StatusBarItem>
+                <Separator Grid.Column="1" />
+                <StatusBarItem Grid.Column="2" HorizontalAlignment="Center">
+                    <TextBlock Text="********** Think of a card from Nine to Ace and pick a card suit! **********" FontSize="14" Name="barInstruction" Foreground="Red"/>
+                </StatusBarItem>
+                <Separator Grid.Column="3" />
+                <StatusBarItem Grid.Column="4" HorizontalAlignment="Center">
+                    <ProgressBar Minimum="0" Maximum="120" Name="pbStatus" Value="0" Height="20" Width="180"/>
+                </StatusBarItem>
+                
+            </StatusBar>
+        </DockPanel>
+    </Grid>
+</Window>

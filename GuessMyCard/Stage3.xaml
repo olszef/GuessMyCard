@@ -1,0 +1,67 @@
+﻿<Page x:Class="GuessMyCard.Stage3"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GuessMyCard"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="Stage3">
+
+    <Grid Background="Green" Name="mainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Column="1" Grid.Row="0"   Name="dock01"/>
+        <DockPanel Grid.Column="2" Grid.Row="0"   Name="dock02"/>
+        <DockPanel Grid.Column="3" Grid.Row="0"   Name="dock03"/>
+        <DockPanel Grid.Column="4" Grid.Row="0"   Name="dock04"/>
+        <DockPanel Grid.Column="5" Grid.Row="0"   Name="dock05"/>
+        <DockPanel Grid.Column="6" Grid.Row="0"   Name="dock06"/>
+        <DockPanel Grid.Column="1" Grid.Row="1"   Name="dock07"/>
+        <DockPanel Grid.Column="2" Grid.Row="1"   Name="dock08"/>
+        <DockPanel Grid.Column="3" Grid.Row="1"   Name="dock09"/>
+        <DockPanel Grid.Column="4" Grid.Row="1"   Name="dock010"/>
+        <DockPanel Grid.Column="5" Grid.Row="1"   Name="dock011"/>
+        <DockPanel Grid.Column="6" Grid.Row="1"   Name="dock012"/>
+        <TextBlock Text="Pile 1" Grid.Row="0" Grid.RowSpan="2" VerticalAlignment="Center" Margin="10,0,0,0" FontSize="27" FontFamily="Monotype Corsiva" Foreground="Chartreuse">
+            <TextBlock.Effect>
+                <BlurEffect Radius="4" KernelType="Gaussian"/>
+            </TextBlock.Effect>
+        </TextBlock>
+        <TextBlock Text="Pile 1" Grid.Row="0" Grid.RowSpan="2" VerticalAlignment="Center" Margin="10,0,0,0" FontSize="27" FontFamily="Monotype Corsiva" Foreground="Chartreuse"/>
+        <Border BorderThickness="0,0,0,1" BorderBrush="Chartreuse" Grid.Row="1" Grid.ColumnSpan="7"/>
+
+        <DockPanel Grid.Column="1" Grid.Row="2"   Name="dock11"/>
+        <DockPanel Grid.Column="2" Grid.Row="2"   Name="dock12"/>
+        <DockPanel Grid.Column="3" Grid.Row="2"   Name="dock13"/>
+        <DockPanel Grid.Column="4" Grid.Row="2"   Name="dock14"/>
+        <DockPanel Grid.Column="5" Grid.Row="2"   Name="dock15"/>
+        <DockPanel Grid.Column="6" Grid.Row="2"   Name="dock16"/>
+        <DockPanel Grid.Column="1" Grid.Row="3"   Name="dock17"/>
+        <DockPanel Grid.Column="2" Grid.Row="3"   Name="dock18"/>
+        <DockPanel Grid.Column="3" Grid.Row="3"   Name="dock19"/>
+        <DockPanel Grid.Column="4" Grid.Row="3"   Name="dock110"/>
+        <DockPanel Grid.Column="5" Grid.Row="3"   Name="dock111"/>
+        <DockPanel Grid.Column="6" Grid.Row="3"   Name="dock112"/>
+        <TextBlock Text="Pile 2" Grid.Row="2" Grid.RowSpan="2" VerticalAlignment="Center" Margin="10,0,0,0" FontSize="27" FontFamily="Monotype Corsiva" Foreground="Pink">
+            <TextBlock.Effect>
+                <BlurEffect Radius="4" KernelType="Gaussian"/>
+            </TextBlock.Effect>
+        </TextBlock>
+        <TextBlock Text="Pile 2" Grid.Row="2" Grid.RowSpan="2" VerticalAlignment="Center" Margin="10,0,0,0" FontSize="27" FontFamily="Monotype Corsiva" Foreground="Pink"/>
+
+    </Grid>
+</Page>
