@@ -128,7 +128,6 @@ namespace GuessMyCard
 
         private void menuLoad_Click(object sender, RoutedEventArgs e)
         {
-            //Game loadedGame = GameSaver.LoadGame();
             int currentStage = theGame.Stage;
             bool loaded = GameSaver.LoadGame(ref theGame);
 
